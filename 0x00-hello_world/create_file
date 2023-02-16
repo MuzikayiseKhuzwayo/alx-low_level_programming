@@ -1,0 +1,2 @@
+#!/bin/bash
+cp template.c ..; mv ../template.c ./$1
