@@ -12,6 +12,7 @@ int main(void)
 	 * Until we complete a quoted sentence. Then return 1 after that
 	 * has been accomplished
 	 */
-	fprintf(stderr, "and that piece of art is useful\" -Dora Korpar, 2015-10-19\n");
+	fprintf(stderr,
+			"and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
 	return (1);
 }
