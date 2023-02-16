@@ -1,0 +1,8 @@
+#!/bin/bash
+echo -e "#!/bin/bash\n$2" > $1
+chmod u+x $1
+echo "created file called $1"
+echo -e "testing created file\n"
+./$1
+echo -e "\n"
+
