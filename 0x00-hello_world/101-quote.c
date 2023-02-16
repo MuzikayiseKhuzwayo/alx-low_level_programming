@@ -1,7 +1,8 @@
 #include <stdio.h>
 /**
  * main - Entry Point.
- * section header: A C program that prints out a string to stderror using fputchar.
+ * section header: A C program that prints out a string to
+ * stderr using fprintf.
  * Return: returns 1 (Successful)
  */
 int main(void)
@@ -11,6 +12,7 @@ int main(void)
 	 * Until we complete a quoted sentence. Then return 1 after that
 	 * has been accomplished
 	 */
-	fputchar(stderr, "a");
-	return (0);
+	fprintf(stderr, "and that piece
+			 of art is useful\" -Dora Korpar, 2015-10-19\n");
+	return (1);
 }

@@ -11,7 +11,7 @@ int main(void)
 	 * initialise an array of char characters that will all be taken to stdout by
 	 * the puts() funtion
 	 */
-	char put_string[] = "Programming is like building a multilingual puzzle";
+	char put_string[] = "\"Programming is like building a multilingual puzzle";
 
 	puts(put_string);
 	return (0);
