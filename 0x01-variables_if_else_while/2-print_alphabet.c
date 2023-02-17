@@ -17,7 +17,10 @@ int main(void)
 	while (i <= 122)
 	{
 		putchar(i);
-		putchar('\n');
+		if (i == 122)
+		{
+			putchar('\n');
+		}
 		i++;
 	}
 
