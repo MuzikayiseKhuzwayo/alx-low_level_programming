@@ -25,9 +25,9 @@ void fibonacci_50(void)
 		prevnum_a = fib_num;
 
 		if (i == 49)
-			printf("%d\n", fib_num);
+			printf("%ld\n", fib_num);
 		else
-			printf("%d, ", fib_num);
+			printf("%ld, ", fib_num);
 		i++;
 	}
 }
