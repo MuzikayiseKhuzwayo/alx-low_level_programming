@@ -25,11 +25,12 @@ int main(void)
 	day = convert_day(month, day);
 
 	print_remaining_days(month, day, year);
-	
+
 	printf("Date: %02d/%02d/%04d\n", month2, day2, year2);
 
-        day2 = convert_day(month2, day2);
+	day2 = convert_day(month2, day2);
 
-        print_remaining_days(month2, day2, year2);
+	print_remaining_days(month2, day2, year2);
+
 	return (0);
 }

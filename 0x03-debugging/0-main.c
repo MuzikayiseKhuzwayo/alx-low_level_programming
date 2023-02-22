@@ -1,6 +1,6 @@
 #include "main.h"
 
-/*
+/**
  * main - The Entry Point. The function that tests whether a user defined
  * function called positive_or_negative() is working properly for input 0
  *
