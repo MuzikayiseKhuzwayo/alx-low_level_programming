@@ -8,11 +8,11 @@
  */
 void fibonacci_98(void)
 {
-	unsigned long int fib_num = 0;
+	unsigned long long int fib_num = 0;
 
-	unsigned long int prevnum_a = 1;
+	unsigned long long int prevnum_a = 1;
 
-	unsigned long int prevnum_b = 0;
+	unsigned long long int prevnum_b = 0;
 
 	int i = 0;
 
@@ -25,9 +25,9 @@ void fibonacci_98(void)
 		prevnum_a = fib_num;
 
 		if (i == 97)
-			printf("%ld\n", fib_num);
+			printf("%llu\n", fib_num);
 		else
-			printf("%ld, ", fib_num);
+			printf("%llu, ", fib_num);
 		i++;
 	}
 }
