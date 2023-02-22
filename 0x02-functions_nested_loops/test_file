@@ -1,0 +1,5 @@
+#!/bin/bash
+gcc template.c $1 _putchar.c -o test; 
+chmod +x test; 
+./test; 
+rm test
