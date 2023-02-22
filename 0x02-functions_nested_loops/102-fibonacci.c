@@ -8,11 +8,11 @@
  */
 void fibonacci_50(void)
 {
-	int fib_num = 0;
+	long int fib_num = 0;
 
-	int prevnum_a = 1;
+	long int prevnum_a = 1;
 
-	int prevnum_b = 0;
+	long int prevnum_b = 0;
 
 	int i = 0;
 
