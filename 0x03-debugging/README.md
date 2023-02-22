@@ -1,0 +1,1 @@
+This is the alx project page for the debugging tasks where we dove deep into debuggin in C using simple printf statements and standard functions. The aim was to learn how to fix major problems in future.
