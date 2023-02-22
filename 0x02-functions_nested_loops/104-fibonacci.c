@@ -8,11 +8,11 @@
  */
 void fibonacci_98(void)
 {
-	long int fib_num = 0;
+	unsigned long int fib_num = 0;
 
-	long int prevnum_a = 1;
+	unsigned long int prevnum_a = 1;
 
-	long int prevnum_b = 0;
+	unsigned long int prevnum_b = 0;
 
 	int i = 0;
 
