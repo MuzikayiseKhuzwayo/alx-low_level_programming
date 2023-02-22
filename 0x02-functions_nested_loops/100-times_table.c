@@ -1,26 +1,21 @@
 #include "main.h"
 
 /**
- * print_times_table - prints the multiplicationntable from 0 to n 
+ * print_times_table - prints the multiplicationntable from 0 to n
+ * @n: the variable thatbstores the size of the tablen
  *
  * Return: null.
  */
 void print_times_table(int n)
 {
-	int i = 0;
-
-	int j = 0;
-	
-	int tmp = 0;
+	int i, j, tmp = 0;
 
 	if (n >= 0 && n <= 15)
 	while (i <= n)
 	{
-		j = 0;	
+		j = 0;
 		while (j <= n)
-		{
 			tmp = i * j;
-
 			if (j == 0)
 			{
 				_putchar(tmp + '0');
@@ -51,7 +46,7 @@ void print_times_table(int n)
 			}
 			j++;
 		}
-		_putchar('\n');	
+		_putchar('\n');
 		i++;
 	}
 }

@@ -21,3 +21,14 @@ void naturals_three_five(void)
 	}
 	printf("%d\n", sum);
 }
+
+/**
+ *  main - uses the function to get values
+ *
+ * Return: 0 (Successful).
+ */
+int main(void)
+{
+	naturals_three_five();
+	return (0);
+}

@@ -33,3 +33,15 @@ void fibonacci_sum(void)
 	}
 	printf("%d\n", even_sum);
 }
+
+/**
+ *  main - finds and sums all even fib nums if fib num
+ *  is less than 4000000.
+ *
+ * Return: null.
+ */
+int main(void)
+{
+	fibonacci_sum();
+	return (0);
+}

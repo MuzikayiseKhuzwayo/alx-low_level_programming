@@ -5,7 +5,7 @@
  *
  * Return: null.
  */
-void fibonacci_50(void)
+void fibonacci_98(void)
 {
 	int fib_num = 0;
 
@@ -21,7 +21,7 @@ void fibonacci_50(void)
 
 		prevnum_b = prevnum_a;
 
-		prevnum_a = fib_num;	
+		prevnum_a = fib_num;
 
 		if (i == 49)
 			printf("%d\n", fib_num);
@@ -29,4 +29,15 @@ void fibonacci_50(void)
 			printf("%d, ", fib_num);
 		i++;
 	}
+}
+
+/**
+ *  main - finds the first 98 fibo nums from 1, 2.. and prints them.
+ *
+ * Return: 0.
+ */
+int main(void)
+{
+	fibonacci_98();
+	return (0);
 }
