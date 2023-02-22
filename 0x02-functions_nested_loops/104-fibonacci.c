@@ -25,9 +25,9 @@ void fibonacci_98(void)
 		prevnum_a = fib_num;
 
 		if (i == 97)
-			printf("%llu\n", fib_num);
+			printf("%lld\n", fib_num);
 		else
-			printf("%llu, ", fib_num);
+			printf("%lld, ", fib_num);
 		i++;
 	}
 }
