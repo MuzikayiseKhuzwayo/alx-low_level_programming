@@ -15,11 +15,10 @@ void print_times_table(int n)
 	{
 		j = 0;
 		while (j <= n)
+		{
 			tmp = i * j;
 			if (j == 0)
-			{
 				_putchar(tmp + '0');
-			}
 			else if (tmp < 10 && j != 0)
 			{
 				_putchar(',');

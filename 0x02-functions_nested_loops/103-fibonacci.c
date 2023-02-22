@@ -29,7 +29,6 @@ void fibonacci_sum(void)
 		{
 			even_sum += fib_num;
 		}
-		i++;
 	}
 	printf("%d\n", even_sum);
 }

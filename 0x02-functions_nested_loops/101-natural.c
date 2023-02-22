@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  *  naturals_three_five- finds multiples of 3 and 5 and sums them all

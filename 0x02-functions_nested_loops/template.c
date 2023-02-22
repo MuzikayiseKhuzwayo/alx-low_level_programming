@@ -13,6 +13,6 @@ int main(void)
 	 * return 0 after that task has been accomplished
 	 */
 	printf("Testing Prototype\n");
-	print_to_98(0);
+	print_last_digit(-1024);
 	return (0);
 }

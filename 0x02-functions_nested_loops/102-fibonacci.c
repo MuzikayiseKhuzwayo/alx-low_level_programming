@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  *  fibonacci_50 - finds the first 50 fibo nums from 1, 2.. and prints them.
