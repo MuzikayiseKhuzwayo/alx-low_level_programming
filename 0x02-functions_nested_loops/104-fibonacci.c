@@ -24,7 +24,7 @@ void fibonacci_98(void)
 
 		prevnum_a = fib_num;
 
-		if (i == 49)
+		if (i == 98)
 			printf("%ld\n", fib_num);
 		else
 			printf("%ld, ", fib_num);
