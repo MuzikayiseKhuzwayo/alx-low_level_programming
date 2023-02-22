@@ -3,18 +3,18 @@
 /**
  * print_sign - checks if a given int n is positive, negative or 0
  * outputs + or - or 0 depending on values
- * @n - integer being checked out
+ * @n: integer being checked out
  *
- * Return: On positive n, return 1. 
+ * Return: On positive n, return 1.
  * On n equals 0, return 0.
- * On negative n, return -1.
+ * On negative n, return -1
  */
 int print_sign(int n)
 {
 	if (n == 0)
 	{
 		_putchar('0');
-		return (1);
+		return (0);
 	}
 	else if (n < 0)
 	{

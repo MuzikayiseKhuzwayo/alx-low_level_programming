@@ -13,8 +13,6 @@ int main(void)
 	 * return 0 after that task has been accomplished
 	 */
 	printf("Testing Prototype\n");
-	print_times_table(8);
-	print_times_table(20);
-	print_times_table(15);
+	print_to_98(0);
 	return (0);
 }

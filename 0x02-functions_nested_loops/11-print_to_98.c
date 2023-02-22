@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_to_98 - prints every number between @n and 98 in sequence
@@ -6,7 +7,7 @@
  *
  * Return: null.
  */
-int print_to_98(int n)
+void print_to_98(int n)
 {
 	if (n <= 98)
 	{
@@ -14,14 +15,11 @@ int print_to_98(int n)
 		{
 			if (n == 98)
 			{
-				_putchar(n + '0');
-				_putchar('\n');
+				printf("%d\n", n);
 			}
 			else
 			{
-				_putchar(n + '0');
-				_putchar(',');
-				_putchar(' ');
+				printf("%d, ", n);
 			}
 			n++;
 		}
@@ -33,14 +31,11 @@ int print_to_98(int n)
 
 			if (n == 98)
 			{
-				_putchar(n + '0');
-				_putchar('\n');
+				printf("%d\n", n);
 			}
 			else
 			{
-				_putchar(n + '0');
-				_putchar(',');
-				_putchar(' ');
+				printf("%d, ", n);
 			}
 			n--;
 		}

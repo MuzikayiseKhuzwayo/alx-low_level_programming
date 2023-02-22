@@ -10,12 +10,12 @@ void times_table(void)
 	int i = 0;
 
 	int j = 0;
-	
+
 	int tmp = 0;
 
 	while (i <= 9)
 	{
-		j = 0;	
+		j = 0;
 		while (j <= 9)
 		{
 			tmp = i * j;
@@ -40,7 +40,7 @@ void times_table(void)
 			}
 			j++;
 		}
-		_putchar('\n');	
+		_putchar('\n');
 		i++;
 	}
 }

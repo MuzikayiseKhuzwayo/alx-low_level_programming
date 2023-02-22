@@ -2,9 +2,9 @@
 
 /**
  * _isalpha - checks if a given char type variable is a letter type char
- * @c - character being checked out
+ * @c: character being checked out
  *
- * Return: On success: 1. 
+ * Return: On success: 1.
  * On failure, return 0.
  */
 int _isalpha(int c)
