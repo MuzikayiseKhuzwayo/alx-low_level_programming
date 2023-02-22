@@ -10,11 +10,11 @@
  */
 void fibonacci_98(void)
 {
-	int64_t fib_num = 0;
+	uint64_t fib_num = 0;
 
-	int64_t prevnum_a = 1;
+	uint64_t prevnum_a = 1;
 
-	int64_t prevnum_b = 0;
+	uint64_t prevnum_b = 0;
 
 	int i = 0;
 
@@ -27,9 +27,9 @@ void fibonacci_98(void)
 		prevnum_a = fib_num;
 
 		if (i == 97)
-			printf("%" PRId64 "\n", fib_num);
+			printf("%" PRIu64 "\n", fib_num);
 		else
-			printf("%" PRId64 ", ", fib_num);
+			printf("%" PRIu64 ", ", fib_num);
 		i++;
 	}
 }
