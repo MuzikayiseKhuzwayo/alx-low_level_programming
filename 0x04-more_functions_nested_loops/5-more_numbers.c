@@ -3,7 +3,7 @@
 /**
  * more_numbers - prints out 0 through 14 followed by newline 10x to stdout
  *
- * Return - null (function is void type)
+ * Return: null (function is void type)
  */
 
 void more_numbers(void)
@@ -18,7 +18,7 @@ void more_numbers(void)
 			{
 				_putchar(1 + 48);
 			}
-			_putchar((i % 10) + 48); 
+			_putchar((i % 10) + 48);
 		}
 		_putchar('\n');
 	}

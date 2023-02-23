@@ -44,7 +44,7 @@ void fizz_buzz(void)
 /**
  * main - Entry Point. Calls fizz_buzz function for execution.
  *
- * Return - 0 (Successful)
+ * Return: 0 (Successful)
  */
 
 int main(void)

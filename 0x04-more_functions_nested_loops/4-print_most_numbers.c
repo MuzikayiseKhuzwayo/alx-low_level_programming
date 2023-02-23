@@ -4,10 +4,10 @@
  * print_most_numbers - prints out 0 through 9 but skips 2 and 4
  * followed by newline to stdout
  *
- * Return - null (function is void type)
+ * Return: null (function is void type)
  */
 
-void print_numbers(void)
+void print_most_numbers(void)
 {
 	int i;
 

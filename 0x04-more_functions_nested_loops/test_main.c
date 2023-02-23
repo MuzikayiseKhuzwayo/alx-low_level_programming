@@ -9,17 +9,29 @@
 
 int main(void)
 {
-	/*char c;*/
+	/*char c;
 
-	/*c = 'A';
+	c = 'A';
 	printf("%c: %d\n", c, _isupper(c));
 	c = 'a';
 	printf("%c: %d\n", c, _isupper(c));
+	c = 91;	
+	printf("%c: %d\n", c, _isupper(c));
+	*/
+	/*print_diagonal(0);	
+	print_diagonal(2);	
+	print_diagonal(10);	
+	print_diagonal(-2);
 	*/
 
-	print_triangle(10);
+	/*print_square(2);	
+	print_square(10);	
+	print_square(0);
+	*/	
+	print_triangle(2);
+	print_triangle(10);	
+	print_triangle(1);	
 	print_triangle(0);	
-	print_triangle(3);	
-	print_triangle(12);	
+	
 	return (0);
 }

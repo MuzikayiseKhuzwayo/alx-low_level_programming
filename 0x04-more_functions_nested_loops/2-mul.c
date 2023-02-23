@@ -5,7 +5,7 @@
  * @a: integer being multiplied
  * @b: integer being multiplied
  *
- * Return - value of result of multiplication @a * @b
+ * Return: value of result of multiplication @a * @b
  */
 
 int mul(int a, int b)
