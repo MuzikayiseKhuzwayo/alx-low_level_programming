@@ -17,12 +17,12 @@ int main(void)
 	swap_int(&a, &b);
 	printf("Now... a = %d, b = %d\n", a, b);
 	*/
-	/*		
+			
 	char s[11] = "Holberton!";
 	printf("%s\n", s);
-	rev_string(s);
+	print_rev(s);
 	printf("%s\n", s);
-	*/
+	
 	/*
 	char *str;
 
@@ -47,6 +47,7 @@ int main(void)
 	printf("%s\n", s1);
 	printf("%s\n", ptr);
 	*/
+	/*
 	int nb;
 
 	nb = _atoi("98");
@@ -65,5 +66,6 @@ int main(void)
 	printf("%d\n", nb);
 	nb = _atoi("---++++ -++ Sui - te -   402 #cisfun :)");
 	printf("%d\n", nb);
+	*/
 	return (0);
 }

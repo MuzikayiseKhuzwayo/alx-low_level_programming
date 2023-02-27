@@ -19,11 +19,11 @@ void print_rev(char *s)
 		s++;
 		len++;
 	}
-
-	while (len > -1)
+	
+	while (len > 0)
 	{
-		_putchar(*s);
 		s--;
+		_putchar(*s);
 		len--;
 	}
 	_putchar('\n');
