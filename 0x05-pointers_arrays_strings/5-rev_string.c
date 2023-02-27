@@ -29,7 +29,7 @@ void rev_string(char *s)
 		s--;
 	}
 
-	for (i = 0; i < (len - 1) / 2; i++)
+	for (i = 0; i < (len) / 2; i++)
 	{
 		tmp = s[len - 1 - i];
 		s[len - 1 - i] = s[i];
