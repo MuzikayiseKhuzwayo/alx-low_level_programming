@@ -29,7 +29,7 @@ int main(void)
 	str = "012345678";
 	puts_half(str);
 	*/
-	
+	/*	
 	int array[5];
 
 	array[0] = 98;
@@ -38,7 +38,7 @@ int main(void)
 	array[3] = 298;
 	array[4] = -1024;
 	print_array(array, 0);
-	
+	*/
 	/*
 	char s1[98];
 	char *ptr;
@@ -47,5 +47,23 @@ int main(void)
 	printf("%s\n", s1);
 	printf("%s\n", ptr);
 	*/
+	int nb;
+
+	nb = _atoi("98");
+	printf("%d\n", nb);
+	nb = _atoi("-402");
+	printf("%d\n", nb);
+	nb = _atoi("          ------++++++-----+++++--98");
+	printf("%d\n", nb);
+	nb = _atoi("214748364");
+	printf("%d\n", nb);
+	nb = _atoi("0");
+	printf("%d\n", nb);
+	nb = _atoi("Suite 402");
+	printf("%d\n", nb);
+	nb = _atoi("         +      +    -    -98 Battery Street; San Francisco, CA 94111 - USA             ");
+	printf("%d\n", nb);
+	nb = _atoi("---++++ -++ Sui - te -   402 #cisfun :)");
+	printf("%d\n", nb);
 	return (0);
 }
