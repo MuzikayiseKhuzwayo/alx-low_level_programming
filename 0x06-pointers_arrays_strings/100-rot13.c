@@ -9,27 +9,21 @@
 
 char *rot13(char *s)
 {
-	int len, i;
+	int i, j;
+	char rot1[] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
+	char rot2[] = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
 
-	len = 0;
-
-	while (*s != '\0')
+	for (i = 0; (*(s + i) != '\0'); i++)
 	{
-		if (*s >= 97 && *s < 110)
+		for (j = 0; j < 52; j++)
 		{
-			*s += 13;
-		}
-		else
-		{
-			*s -= 13;
-		}
-		s++;
-		len++;
-	}
 
-	for (i = 0; i < len; i++)
-	{
-		s--;
+			if (s[i] == rot1[j])
+			{
+				s[i] = rot2[j];
+				break;
+			}
+		}
 	}
 	return (s);
 }

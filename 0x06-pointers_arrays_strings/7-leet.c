@@ -9,39 +9,20 @@
 
 char *leet(char *s)
 {
-	int len, i;
+	int i, j;
+	char alpha[] = "aAeElLoOtT";
 
-	len = 0;
+	char leet[] = "4433110077";
 
-	while (*s != '\0')
+	for (i = 0; (*(s + i) != '\0'); i++)
 	{
-		if (*s == 'a' || *s == 'A')
+		for (j = 0; j < 10; j++)
 		{
-			*s = '4';
+			if (s[i] == alpha[j])
+			{
+				s[i] = leet[j];
+			}
 		}
-		else if (*s == 'e' || *s == 'E')
-		{
-			*s = '3';
-		}
-		else if (*s == 'o' || *s == 'O')
-		{
-			*s = '0';
-		}
-		else if (*s == 't' || *s == 'T')
-		{
-			*s = '7';
-		}
-		else if (*s == 'l' || *s == 'L')
-		{
-			*s = '1';
-		}
-		s++;
-		len++;
-	}
-
-	for (i = 0; i < len; i++)
-	{
-		s--;
 	}
 	return (s);
 }

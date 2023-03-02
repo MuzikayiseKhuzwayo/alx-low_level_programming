@@ -81,14 +81,14 @@ int main(void)
     	}
     	printf("\n");	
 	*/
-	
+	/*
 	char s1[] = "Hello";
     	char s2[] = "World!";
 
     	printf("%d\n", _strcmp(s1, s2));
     	printf("%d\n", _strcmp(s2, s1));
     	printf("%d\n", _strcmp(s1, s1));
-	
+	*/	
 	/*
 	int a[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 98, 1024, 1337};
 
@@ -106,7 +106,7 @@ int main(void)
     	printf("%s", str);
 	*/
 
-	/*
+	/*	
 	char str[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\nhello world! hello-world 0123456hello world\thello world.hello world\n";
     	char *ptr;
 
@@ -114,7 +114,7 @@ int main(void)
     	printf("%s", ptr);
    	printf("%s", str);
 	*/
-	/*
+	/*	
 	char s[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\n";
     	char *p;
 
@@ -122,7 +122,7 @@ int main(void)
     	printf("%s", p);
     	printf("%s", s);
 	*/
-	/*
+	
 	char s[] = "ROT13 (\"rotate by 13 places\", sometimes hyphenated ROT-13) is a simple letter substitution cipher.\n";
     	char *p;
 
@@ -140,7 +140,7 @@ int main(void)
     	printf("%s", p);
     	printf("------------------------------------\n");
     	printf("%s", s);
-	*/
+	
 	/*
 	char *n = "1234567892434574367823574575678477685785645685876876774586734734563456453743756756784458";
         char *m = "9034790663470697234682914569346259634958693246597324659762347956349265983465962349569346";
