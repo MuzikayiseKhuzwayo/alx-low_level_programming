@@ -171,7 +171,7 @@ int main(void)
         }
         n = "999999999";
         m = "1";
-        res = infinite_add(n, m, r2, 10);
+        res = infinite_add(n, m, r2, 0);
         if (res == 0)
         {
                 printf("Error\n");

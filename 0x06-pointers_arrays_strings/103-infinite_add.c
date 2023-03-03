@@ -23,7 +23,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	r[size_r - (size_r - len3b) + 1] = '\0';
 
-	if (n1[0] == '-' || n2[0] == '-' || len1 == 0 || len2 == 0)
+	if (n1[0] == '-' || n2[0] == '-' || len1 == 0 || len2 == 0 || size_r == 0)
 		neg = 1;
 
 	for (i = 0; i < size_r - 1; i++)
