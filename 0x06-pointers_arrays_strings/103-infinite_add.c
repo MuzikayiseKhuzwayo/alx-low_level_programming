@@ -31,8 +31,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	for (i = 0; i < size_r - 1; i++)
 	{
-		if (len3 < 0 && tmp == 0)
-			continue;
+		if (len3 < 0)
+			break;
 		else
 		{
 			if (len1 - i > 0 && len2 - i > 0)
@@ -46,6 +46,11 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			tmp /= 10;
 		}
 		len3--;
+	}
+	if (r[0] == '0')
+	{
+		for (i = 0; i < size_r - 1; i++)
+			r[i] = r[i +1];
 	}
 	if (tmp > 0 || len1 >= size_r || len2 >= size_r)
 	{
