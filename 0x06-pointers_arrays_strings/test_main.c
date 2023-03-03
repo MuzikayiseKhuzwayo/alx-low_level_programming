@@ -141,7 +141,7 @@ int main(void)
     	printf("------------------------------------\n");
     	printf("%s", s);
 	*/	
-	
+	/*	
 	char *n = "1234567892434574367823574575678477685785645685876876774586734734563456453743756756784458";
         char *m = "9034790663470697234682914569346259634958693246597324659762347956349265983465962349569346";
         char r[100];
@@ -189,14 +189,14 @@ int main(void)
         {
                 printf("%s + %s = %s\n", n, m, res);
         }
+	*/
 	
-	/*
 	char buffer[] = "This is a string!\0And this is the rest of the #buffer :)\1\2\3\4\5\6\7#cisfun\n\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x20\x21\x34\x56#pointersarefun #infernumisfun\n";
 
     	printf("%s\n", buffer);
     	printf("---------------------------------\n");
     	print_buffer(buffer, sizeof(buffer));
-	*/	
+		
 	return (0);
 	
 

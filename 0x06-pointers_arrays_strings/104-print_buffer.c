@@ -12,19 +12,25 @@
 
 void print_buffer(char *b, int size)
 {
-	int i, j, cnt;
+	int i, j, k, cnt, cnt2;
 	char c;
 
 	cnt = 0;
+
+	cnt2 = 10;
+
+	k = 0;
 
 	if (size < 1)
 	{
 		printf("\n");
 		return;
-	}	
-	for (i = 0; i < size / 10; i++)
+	}
+	for (i = 0; i < (size / 10) + 1; i++)
 	{
-		printf("%08x: ", i);
+		if (i == size / 10)
+			cnt2 = size % 10;
+		printf("%08x: ", i * 10);
 
 		for (j = 0; j < 10; j++)
 		{
@@ -36,12 +42,17 @@ void print_buffer(char *b, int size)
 			cnt++;
 		}
 		b -= 10;
-		for (j = 0; j < 10; j++)
+		for (j = 0; j < cnt2; j++)
 		{
-			c = (strchr(*b, '\\')) ? '.' : *b;
-			printf("%.1s\n", c);
+			if (*b > 31 && *b < 127)
+				c = *b;
+			else
+				c = '.';
+			printf("%c", c);
 			b++;
+			k++;
 		}
+		printf("\n");
 		cnt = 0;
 	}
 }
