@@ -12,14 +12,14 @@
 
 void print_buffer(char *b, int size)
 {
-	int i, j, k, cnt, cnt2;
+	int i, j, cnt, cnt2, cnt3;
 	char c;
 
 	cnt = 0;
 
 	cnt2 = 10;
 
-	k = 0;
+	cnt3 = 0;
 
 	if (size < 1)
 	{
@@ -34,14 +34,22 @@ void print_buffer(char *b, int size)
 
 		for (j = 0; j < 10; j++)
 		{
-			printf("%02x", *b++);
+			if (j < cnt2)
+				printf("%02x", *b++);
+			else
+			{
+				printf("  ");
+				cnt3++;
+			}
+			
 			if (cnt % 2)
 			{
 				printf(" ");
 			}
 			cnt++;
 		}
-		b -= 10;
+
+		b = b - 10 + cnt3;
 		for (j = 0; j < cnt2; j++)
 		{
 			if (*b > 31 && *b < 127)
@@ -50,7 +58,6 @@ void print_buffer(char *b, int size)
 				c = '.';
 			printf("%c", c);
 			b++;
-			k++;
 		}
 		printf("\n");
 		cnt = 0;
