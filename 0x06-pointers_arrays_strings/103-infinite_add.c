@@ -14,20 +14,17 @@
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int len1, len2, len3, i, len3b;
+	int len1, len2, len3, i, len3b, neg;
 	char tmp;
 
-	len1 = strlen(n1);
+	len1 = strlen(n1), len2 = strlen(n2), len3 = (len1 >= len2) ? len1 : len2;
 
-	len2 = strlen(n2);
-
-	len3 = (len1 >= len2) ? len1 : len2;
-
-	tmp = 0;
-
-	len3b = len3;
+	tmp = 0, len3b = len3, neg = 0;
 
 	r[size_r - (size_r - len3b) + 1] = '\0';
+
+	if (n1[0] == '-' || n2[0] == '-' || len1 == 0 || len2 == 0)
+		neg = 1;
 
 	for (i = 0; i < size_r - 1; i++)
 	{
@@ -49,7 +46,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		for (i = 0; i < size_r - 1; i++)
 			r[i] = r[i + 1];
 	}
-	if (tmp > 0 || len1 >= size_r || len2 >= size_r)
+	if (tmp > 0 || len1 >= size_r || len2 >= size_r || size_r <= 0 || neg == 1)
 	{
 		r = 0;
 	}

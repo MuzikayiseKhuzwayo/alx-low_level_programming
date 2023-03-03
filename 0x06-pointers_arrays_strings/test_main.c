@@ -158,8 +158,8 @@ int main(void)
         {
                 printf("%s + %s = %s\n", n, m, res);
         }
-        n = "12345690";
-        m = "1";
+        n = "";
+        m = "";
         res = infinite_add(n, m, r3, 10);
         if (res == 0)
         {
