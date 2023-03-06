@@ -11,8 +11,6 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	printf("%s, search query = %s\n", haystack, needle);
-
 	while (*haystack != '\0')
 	{
 		char *a = haystack;
@@ -23,11 +21,9 @@ char *_strstr(char *haystack, char *needle)
 			b++;
 		}
 		if (*b == '\0')
-			return (haystack);
-		printf("increment haystack, ");
+			return (a);
 		a++;
-		printf("haystack = %s\n", a);
 	}
-	return (0);
+	return (NULL);
 }
 

@@ -1,5 +1,6 @@
 #include "main.h"
 #include <string.h>
+#include <stdio.h>
 
 /**
 * _strchr - finds first occurence of @c in @s
@@ -32,8 +33,7 @@ char *_strchr(char *s, char c)
 	}
 	else
 	{
-		tmpstr = 0;
+		tmpstr = NULL;
 	}
 	return (tmpstr);
 }
-
