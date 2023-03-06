@@ -112,7 +112,7 @@ int main(void)
 	*/
 
 	char *s = "hello, world";
-	char *f = "a";
+	char *f = "l";
 	char *t;
 
 	t = _strstr(s, f);
