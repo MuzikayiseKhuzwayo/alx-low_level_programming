@@ -87,7 +87,7 @@ int main(void)
     	char *s = "hello";
     	char *f;
 
-    	f = _strchr(s, 'a');
+    	f = _strchr(s, 'l');
 
     	if (f != NULL)
     	{

@@ -13,15 +13,10 @@ char *_strstr(char *haystack, char *needle)
 {
 	printf("%s, search query = %s\n", haystack, needle);
 
-	char *a; 
-	char *b;
-
-	a = haystack;
-	b = needle;
-
-
-	while (*a != '\0')
+	while (*haystack != '\0')
 	{
+		char *a = haystack;
+		char *b = needle;
 		while (*a == *b && *b != '\0')
 		{
 			a++;
@@ -33,6 +28,6 @@ char *_strstr(char *haystack, char *needle)
 		a++;
 		printf("haystack = %s\n", a);
 	}
-	return (NULL);
+	return (0);
 }
 
