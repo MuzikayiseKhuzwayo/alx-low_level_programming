@@ -83,7 +83,7 @@ int main(void)
     	printf("-------------------------------------------------\n");
     	simple_print_buffer(buffer, 98);    
 	*/
-	
+	/*	
     	char *s = "hello";
     	char *f;
 
@@ -93,7 +93,7 @@ int main(void)
     	{
         	printf("%s\n", f);
    	}
-	
+	*/
 	/*
     	char *s = "hello, world";
     	char *f = "oleh";
@@ -110,14 +110,14 @@ int main(void)
     	t = _strpbrk(s, f);
     	printf("%s\n", t);
 	*/
-	/*
+
 	char *s = "hello, world";
 	char *f = "a";
 	char *t;
 
 	t = _strstr(s, f);
 	printf("%s\n", t);
-	*/
+
 	/*
 	char board[8][8] = {
         	{'r', 'k', 'b', 'q', 'k', 'b', 'k', 'r'},
