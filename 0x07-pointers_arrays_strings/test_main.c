@@ -83,17 +83,17 @@ int main(void)
     	printf("-------------------------------------------------\n");
     	simple_print_buffer(buffer, 98);    
 	*/
-	/*
+	
     	char *s = "hello";
     	char *f;
 
-    	f = _strchr(s, 'l');
+    	f = _strchr(s, 'a');
 
     	if (f != NULL)
     	{
         	printf("%s\n", f);
    	}
-	*/
+	
 	/*
     	char *s = "hello, world";
     	char *f = "oleh";
@@ -112,7 +112,7 @@ int main(void)
 	*/
 	/*
 	char *s = "hello, world";
-	char *f = "world";
+	char *f = "a";
 	char *t;
 
 	t = _strstr(s, f);
@@ -148,13 +148,13 @@ int main(void)
 	print_diagsums((int *)c5, 5);
 	*/
 
-
+	/*
 	char *s0 = "Bob Dylan";
 	char *s1 = "Robert Allen";
 	
 	printf("%s, %s\n", s0, s1);
 	set_string(&s1, s0);
 	printf("%s, %s\n", s0, s1);
-
+	*/
 	return (0);
 }

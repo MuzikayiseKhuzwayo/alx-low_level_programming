@@ -1,6 +1,6 @@
 #include "main.h"
 #include <string.h>
-
+#include <stdio.h>
 /**
 * _strstr - find first occurence of @needle in @haystack
 * @haystack: string to be searched through;
@@ -11,32 +11,28 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int i, f, j;
+	printf("%s, search query = %s\n", haystack, needle);
 
-	f = 0;
+	char *a; 
+	char *b;
 
-	for (i = 0; haystack[i] != '\0'; i++)
+	a = haystack;
+	b = needle;
+
+
+	while (*a != '\0')
 	{
-		for (j = 0; needle[j] != '\0'; j++)
+		while (*a == *b && *b != '\0')
 		{
-			if (needle[j] == haystack[i + j])
-			{
-				f++;
-			}
+			a++;
+			b++;
 		}
-		if (f != (int)strlen(needle))
-		{
-			f = 0;
-		}
-		else if (f == (int)strlen(needle))
-		{
-			break;
-		}
+		if (*b == '\0')
+			return (haystack);
+		printf("increment haystack, ");
+		a++;
+		printf("haystack = %s\n", a);
 	}
-	if (f)
-	{
-		return (haystack + i);
-	}
-	return (0);
+	return (NULL);
 }
 
