@@ -69,9 +69,9 @@ int main(void)
 	/*
 	_puts_recursion("Puts with recursion");
 	*/
-	/*
+
 	_print_rev_recursion("\nColton Walker");
-	*/
+
 	/*
 	int n;
 
@@ -154,7 +154,7 @@ int main(void)
 	r = is_palindrome("step on no pets");
 	printf("%d\n", r);
 	*/
-
+	/*
 	int r;
 
 	r = wildcmp("main.c", "*.c");
@@ -181,6 +181,6 @@ int main(void)
 	printf("%d\n", r);
 	r = wildcmp("abc", "*b");
 	printf("%d\n", r);
-
+	*/
 	return (0);
 }
