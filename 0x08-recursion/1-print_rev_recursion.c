@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 /**
 * print_rev_recursion - recursively prints the
 * reverse of a string
