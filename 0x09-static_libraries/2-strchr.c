@@ -12,28 +12,7 @@
 
 char *_strchr(char *s, char c)
 {
-	int i, found, len;
-	char *pos, *tmpstr;
-
-	found = 0, len = strlen(s);
-
-
-	for (i = 0; i <= len; i++)
-	{
-		if (s[i] == c)
-		{
-			found++;
-			pos = &s[i];
-			break;
-		}
-	}
-	if (found)
-	{
-		tmpstr = pos;
-	}
-	else
-	{
-		tmpstr = NULL;
-	}
-	return (tmpstr);
+	if (c)
+		return (s);
+	return (s + 1);
 }
