@@ -1,0 +1,1 @@
+This is the 0x09 project folder where we were introduced to concepts concerning libraries. We learned about the difference between Static Libraries and Shared/Dynamic Libraries and learned about how Static Libraries are created, indexed and linked to files for proper runtime representation
