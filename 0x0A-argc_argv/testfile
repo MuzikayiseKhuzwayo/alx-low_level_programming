@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "Testing file $1";
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 $1 -o out;
+./out;

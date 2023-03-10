@@ -1,0 +1,1 @@
+This is the 0x0A project folder where we took a look at how arguments are supplied to main functions in C. We learnt about argc, which is the argument count, and argv, which stores all the argument values that will be used in the program
