@@ -58,13 +58,29 @@ void print_grid(int **grid, int width, int height)
 }
 
 /**
+ * print_tab - Prints an array of string
+ * @tab: The array to print
+ *
+ * Return: nothing
+ */
+void print_tab(char **tab)
+{
+    int i;
+
+    for (i = 0; tab[i] != NULL; ++i)
+    {
+        printf("%s\n", tab[i]);
+    }
+}
+
+/**
  * main - check the code for ALX School students.
  *
  * Return: Always 0.
  */
-int main(int ac, char *av[])
+int main()
 {
-    /*
+	/*
     char *buffer;
 
     buffer = create_array(98, 'H');
@@ -129,7 +145,7 @@ int main(int ac, char *av[])
 	print_grid(grid, 6, 4);
 	free_grid(grid, 4);
 	*/
-
+	/*
 	char *s;
 
 	s = argstostr(ac, av);
@@ -139,6 +155,17 @@ int main(int ac, char *av[])
 	}
 	printf("%s", s);
 	free(s);
+	*/
+
+	char **tab;
+
+	tab = strtow("      ALX School         #cisfun      ");
+	if (tab == NULL)
+	{
+		printf("Failed\n");
+		return (1);
+	}
+	print_tab(tab);
 
 	return (0);
 }
