@@ -159,7 +159,7 @@ int main()
 
 	char **tab;
 
-	tab = strtow("      ALX School         #cisfun      ");
+	tab = strtow("                ");
 	if (tab == NULL)
 	{
 		printf("Failed\n");
