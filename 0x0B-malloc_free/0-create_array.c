@@ -3,8 +3,8 @@
 
 /**
 * create_array - creates a char array initialised with a certain char
-* @size - given size of array
-* @c - char initialised with
+* @size: given size of array
+* @c: char initialised with
 *
 * Return: pointer to array if success, or Null if failed
 */
