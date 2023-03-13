@@ -76,7 +76,7 @@ int main(void)
     simple_print_buffer(buffer, 98);
     free(buffer);
     */
-	
+	/*	
 	char *s;
 
 	s = _strdup("ALX SE");
@@ -87,11 +87,11 @@ int main(void)
 	}
 	printf("%s\n", s);
 	free(s);
-	
-	/*
+	*/
+
 	char *s;
 
-	s = str_concat("Betty ", "Holberton");
+	s = str_concat("Betty ", NULL);
 	if (s == NULL)
 	{
 		printf("failed\n");
@@ -99,7 +99,7 @@ int main(void)
 	}
 	printf("%s\n", s);
 	free(s);
-	*/
+
 	/*
 	int **grid;
 
