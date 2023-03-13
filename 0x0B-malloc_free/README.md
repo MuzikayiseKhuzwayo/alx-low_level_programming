@@ -1,0 +1,1 @@
+##Malloc and Free\nThis is the project folder where we dove deep into what malloc is, how it works and why it is useful. We also learned about deallocation of memory using free() and this folder holds all the tasks involved in our learning experience
