@@ -15,8 +15,6 @@ char *str_concat(char *s1, char *s2)
 	unsigned int i, j, k;
 	char *arr;
 
-	j = strlen(s1), k = strlen(s2);
-
 	if (s1 == NULL)
 	{
 		s1 = '\0';
@@ -25,6 +23,8 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = '\0';
 	}
+
+	j = strlen(s1), k = strlen(s2);
 
 	arr = malloc(sizeof(char) * (j + k + 1));
 

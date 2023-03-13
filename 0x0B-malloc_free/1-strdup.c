@@ -4,7 +4,7 @@
 
 /**
 * _strdup - returns a pointer to a new copy of a string
-* @str - given string to be copied
+* @str: given string to be copied
 *
 * Return: pointer to string if success, or Null if failed
 */
@@ -14,14 +14,14 @@ char *_strdup(char *str)
 	unsigned int i, j;
 	char *arr;
 
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+
 	j = strlen(str);
 
 	arr = malloc(sizeof(char) * (j + 1));
-
-	if (str == NULL)
-	{
-		return (0);
-	}
 	if (arr == NULL)
 	{
 		return (NULL);
