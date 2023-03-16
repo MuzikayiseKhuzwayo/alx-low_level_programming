@@ -37,7 +37,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		free(ptr);
 		return ((void *)newarr);
 	}
-	for (i = 0; i <= old_size; i++)
+	for (i = 0; i < old_size; i++)
 	{
 		newarr[i] = oldptr[i];
 		if (new_size == i)
