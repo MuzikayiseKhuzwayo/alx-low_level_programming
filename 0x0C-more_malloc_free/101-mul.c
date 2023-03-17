@@ -191,6 +191,8 @@ int main(int argc, char *argv[])
 	len = find_len(argv[1]) + find_len(argv[2]);
 	newnum = create_array(len + 1);
 	multiply(argv[1], argv[2], newnum);
+	while (*newnum && (*newnum < '1' || *newnum > '9'))
+		newnum++;
 	print_num(newnum);
 	return (0);
 }
