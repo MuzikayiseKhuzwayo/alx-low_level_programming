@@ -145,7 +145,7 @@ void multiply(char *num1, char *num2, char *numarr)
 			result[k + l] += c;
 		k++;
 	}
-	j = len1 + len2, i = 0;
+	j = len1 + len2 - 1, i = 0;
 	while (j >= 0 && result[j] == 0)
 		j--;
 	if (j == -1)
