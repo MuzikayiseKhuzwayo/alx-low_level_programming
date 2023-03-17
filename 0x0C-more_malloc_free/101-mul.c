@@ -155,6 +155,7 @@ void multiply(char *num1, char *num2, char *numarr)
 		numarr[i++] = result[j--] + '0';
 	}
 	numarr[i] = '\0';
+	free(result);
 }
 
 /**
@@ -194,5 +195,6 @@ int main(int argc, char *argv[])
 	while (*newnum && (*newnum < '1' || *newnum > '9'))
 		newnum++;
 	print_num(newnum);
+	free(newnum);
 	return (0);
 }
