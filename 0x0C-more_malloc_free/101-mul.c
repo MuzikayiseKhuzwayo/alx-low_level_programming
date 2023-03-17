@@ -170,9 +170,15 @@ int main(int argc, char *argv[])
 	char *newnum;
 
 	if (argc != 3)
+	{
 		error_exit();
+		exit(98);
+	}
 	if (!is_num(argv[1]) || !is_num(argv[2]))
+	{
 		error_exit();
+		exit(98);
+	}
 	if (*(argv[1]) == '0')
 		argv[1] = remzeros(argv[1]);
 	if (*(argv[2]) == '0')
