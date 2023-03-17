@@ -1,23 +1,21 @@
 #include <stdlib.h>
 #include "main.h"
-#include <string.h>
 #include <stdio.h>
 
 /**
- * print_error - prints an error message using _putchar
+ * error_exit - exits the program with an error message
  *
  * Return: Nothing
  */
-void print_error(void)
+void error_exit(void)
 {
 	int i;
 	char *err = "Error\n";
 
-	for (i = 0; i < 6; i++)
+	for (i = 0; err[i] != '\0'; i++)
 	{
 		_putchar(err[i]);
 	}
-	exit(98);
 }
 
 /**
@@ -44,129 +42,149 @@ int is_num(char *arg)
 }
 
 /**
- * mul - multiplies two numbers
- * @num1: string reresented number getting multilied
- * @num2: string number getting multiplied with @num1
- * @result: pointer holding the result as integer
- * @len1: length of string num1
- * @len2: length of string num2
+ * remzeros - remove leading zeros in string
+ * @str: inut str confirmed to have numbers
+ *
+ * Return: pointer to string
+ */
+char *remzeros(char *str)
+{
+	while (*str && *str == '0')
+		str++;
+	return (str);
+}
+
+/**
+ * print_num - prints the provided number
+ * @str: given string of numbers
  *
  * Return: Nothing
  */
-void mul(char *num1, int len1, char *num2, int len2, int *result)
+void print_num(char *str)
 {
-	int i, j, k, l, n1, n2, c, temp;
+	while (*str)
+	{
+		_putchar(*str++);
+	}
+	_putchar('\n');
+}
+
+/**
+ * find_len - finds the length of the string
+ * @str: given string argument
+ *
+ * Return: integer correlating to length of given string
+ */
+int find_len(char *str)
+{
+	int len;
+
+	len = 0;
+
+	while (*str++)
+		len++;
+
+	return (len);
+}
+
+/**
+ * create_array - creates an array filled with cs
+ * @size: byte size of array
+ *
+ * Return: pointer to a char string
+ */
+char *create_array(int size)
+{
+	char *newarr;
+	int i;
+
+	newarr = malloc(sizeof(char) * size);
+	if (newarr == NULL)
+		exit(98);
+	for (i = 0; i < size - 1; i++)
+		newarr[i] = 'c';
+	newarr[i] = '\0';
+	return (newarr);
+}
+
+/**
+ * multiply - multiplies two numbers and stores in a char array
+ * @num1: number argument
+ * @num2: number argument
+ * @numarr: char array of numbers
+ *
+ * Return: Nothing
+ */
+void multiply(char *num1, char *num2, char *numarr)
+{
+	int len1, len2, i, j, k, l, n1, n2, c, temp, *result;
+
+	len1 = find_len(num1), len2 = find_len(num2);
+	if (len1 == 0 || len2 == 0)
+		numarr = "0";
+	result = malloc(sizeof(int) * (len1 + len2));
+	if (result == NULL)
+		exit(98);
 
 	k = 0, l = 0;
 
-	for (i = len1; i >= 0; i--)
+	for (i = len1 - 1; i >= 0; i--)
 	{
 		c = 0;
-		n1 = atoi(&num1[i]);
+		n1 = num1[i] - '0';
 		l = 0;
-
-		for (j = len2; j >= 0; j--)
+		for (j = len2 - 1; j >= 0; j--)
 		{
-			n2 = atoi(&num2[j]);
+			n2 = num2[j] - '0';
 			temp = n1 * n2 + result[k + l] + c;
 			c = temp / 10;
-			result[l + k] = temp % 10;
+			result[k + l] = temp % 10;
 			l++;
 		}
 		if (c > 0)
 			result[k + l] += c;
 		k++;
 	}
-}
-
-/**
- * to_str - turns a reversed int array into a char array
- * @intarr: integer array
- * @chrarr: char array to be augmented
- * @nnums: number of items inside array
- *
- * Return: nothing
- */
-void to_str(int *intarr, char *chrarr, int nnums)
-{
-	int i, j;
-
-	j = 0;
-
-	for (i = nnums - 1; i >= 0; i++)
+	j = len1 + len2, i = 0;
+	while (j >= 0 && result[j] == 0)
+		j--;
+	if (j == -1)
+		numarr = "0";
+	while (j >= 0)
 	{
-		chrarr[j] = intarr[i] + '0';
-		j++;
+		numarr[i++] = result[j--] + '0';
 	}
-	chrarr[j] = '\0';
-}
-
-/**
- * print_num - prints a char array to stdout
- * @str: string being printed using putchar
- *
- * Return: Nothing
- */
-void print_num(char *str)
-{
-	int i;
-
-	i = 0;
-
-	while (str[i] != '\0')
-	{
-		_putchar(str[i]);
-	}
-	_putchar('\n');
+	numarr[i] = '\0';
 }
 
 /**
  * main - multiplies two numbers
  * @argc: argument count
- * @argv: argument values
+ * @argv: argument values taken into the program
  *
- * Return: 0 if success, 98 if faiure or Error
+ * Return: 0 if passed, 98 if failed
  */
 int main(int argc, char *argv[])
 {
-	int i, len1, len2, *res;
+	int len;
 	char *newnum;
 
 	if (argc != 3)
-		print_error();
-	if ((is_num(argv[1]) == 0) || (is_num(argv[2]) == 0))
-		print_error();
-	printf("Number was found to be valid\n");
-	len1 = strlen(argv[1]), len2 = strlen(argv[2]);
-
-	res = malloc(sizeof(int) * (len1 + len2));
-	if (res == NULL)
-		exit(98);
-	printf("Malloc inplemented successfully\n");
-	mul(argv[1], len1, argv[2], len2, res);
-	printf("Number multiplied successfully\n");
-	fflush(stdout);
-
-	i = (len1 + len2); 
-	while (i >= 0 && res[i] == 0)
-	       	i--;
-	fflush(stdout);
-	printf("The value of i is %d", i);
-	if (i < 0)
+		error_exit();
+	if (!is_num(argv[1]) || !is_num(argv[2]))
+		error_exit();
+	if (*(argv[1]) == '0')
+		argv[1] = remzeros(argv[1]);
+	if (*(argv[2]) == '0')
+		argv[2] = remzeros(argv[2]);
+	if (*(argv[1]) == '\0' || *(argv[2]) == '\0')
 	{
 		print_num("0");
-		fflush(stdout);
 		return (0);
 	}
-	
-	newnum = malloc(sizeof(char) * (i + 1));
-	if (newnum == NULL)
-		exit(98);
-	printf("Malloc implemented successfully for newnum\n");
-	to_str(res, newnum, i);
-	printf("printing number\n\n");
-	fflush(stdout);
+	len = find_len(argv[1]) + find_len(argv[2]);
+	newnum = create_array(len + 1);
+	multiply(argv[1], argv[2], newnum);
 	print_num(newnum);
-
 	return (0);
 }
