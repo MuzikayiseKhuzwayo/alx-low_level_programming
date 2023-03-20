@@ -22,8 +22,10 @@ int _strlen(char *str)
  * cpystr - copies string from the src to destination
  * @src: src string
  * @dest: destination string
+ *
+ * Return: pointer to the copied string
  */
-void cpystr(char *src, char *dest)
+char *cpystr(char *src, char *dest)
 {
 	int i, j;
 
@@ -35,6 +37,7 @@ void cpystr(char *src, char *dest)
 		else
 			dest[j] = '\0';
 	}
+	return (dest);
 }
 
 /**
@@ -47,7 +50,6 @@ void cpystr(char *src, char *dest)
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	char *newname, *newowner;
 	int i, j;
 	dog_t *doge;
 
@@ -58,25 +60,23 @@ dog_t *new_dog(char *name, float age, char *owner)
 	doge = malloc(sizeof(dog_t));
 	if (doge == NULL)
 		return (NULL);
-	newname = malloc(sizeof(char) * (i + 1));
-	if (newname == NULL)
+	doge->name = malloc(sizeof(char) * (i + 1));
+	if (doge->name == NULL)
 	{
 		free(doge);
 		return (NULL);
 	}
-	newowner = malloc(sizeof(char) * (j + 1));
-	if (newowner == NULL)
+	doge->owner = malloc(sizeof(char) * (j + 1));
+	if (doge->owner == NULL)
 	{
-		free(newname);
+		free(doge->name);
 		free(doge);
 		return (NULL);
 	}
-	cpystr(name, newname);
-	cpystr(owner, newowner);
 
-	doge->name = newname;
+	doge->name = cpystr(name, doge->name);
 	doge->age = age;
-	doge->owner = owner;
+	doge->owner = cpystr(owner, doge->owner);
 
 	return (doge);
 }
