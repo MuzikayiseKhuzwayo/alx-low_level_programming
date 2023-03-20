@@ -1,6 +1,6 @@
 #include "dog.h"
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
  * print_dog - prints out the information of the dog
  * @d: pointer to the structure holding the information
@@ -10,9 +10,17 @@
 void print_dog(struct dog *d)
 {
 	if (d == NULL)
-		exit();
-	char *noelement = "(nil)";
-	printf("Name: %s\n", (d->name == NULL) ? noelement : d->name);
-	printf("Age: %.6f\n", (d->age == NULL) ? noelement : d->age);
-	printf("Owner: %s\n", (d->owner == NULL) ? noelement : d->owner);
+		return;
+	if (d->name == NULL)
+		printf("Name: (nil)\n");
+	else
+		printf("Name: %s\n", d->name);
+	if (d->age < 0)
+		printf("Age: (nil)\n");
+	else
+		printf("Age: %.6f\n", d->age);
+	if (d->owner == NULL)
+		printf("Owner: (nil)\n");
+	else
+		printf("Owner: %s\n", d->owner);
 }
