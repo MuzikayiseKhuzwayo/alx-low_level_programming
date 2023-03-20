@@ -29,16 +29,11 @@ int main(void)
 	a = PI * r * r;
 	printf("%.3f\n", a);
 	*/
-	/*
-	int i;
-	int j;
+	int i, s, j;
 
 	i = ABS(-98) * 10;
-	j = ABS(98) * 10;
+	j = ABS(0.9) * 10;
 	printf("%d, %d\n", i, j);
-	*/
-
-	int s;
 
 	s = SUM(98, 1024);
 	printf("%d\n", s);

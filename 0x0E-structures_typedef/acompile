@@ -1,0 +1,4 @@
+#!/bin/bash
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 cmain.c $1 -o out -lm; 
+echo -e "Testing file\n"; 
+./out
