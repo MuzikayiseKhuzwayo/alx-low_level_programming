@@ -5,15 +5,18 @@
  * @array: pointer to array of integers
  * @size: size of the array
  * @action: function that executes on every index
+ *
+ * Return: Nothing
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	unsigned long int i;
 
-	if (array == NULL || size <= 0 || action == NULL)
-		return;
-	for (i = 0; i < size; i++)
+	if (array && size && action)
 	{
-		action(array[i]);
+		for (i = 0; i < size; i++)
+		{
+			action(array[i]);
+		}
 	}
 }
