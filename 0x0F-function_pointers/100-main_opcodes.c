@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
 	for (opcode = first_opcode; bytes >= 0; opcode++, bytes--)
 	{
-		printf("%02x", *opcode & 0xff);
+		printf("%.2hhx", *opcode);
 		if (bytes != 0)
 			printf(" ");
 	}
