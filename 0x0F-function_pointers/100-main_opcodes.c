@@ -28,10 +28,10 @@ int main(int argc, char *argv[])
 
 	first_opcode = (char *)(&main);
 
-	for (opcode = first_opcode; bytes >= 0; opcode++, bytes--)
+	for (opcode = first_opcode; bytes > 0; opcode++, bytes--)
 	{
-		printf("%.2hhx", *opcode);
-		if (bytes != 0)
+		printf("%02x", *opcode & 0xff);
+		if (bytes != 1)
 			printf(" ");
 	}
 	printf("\n");
