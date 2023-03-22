@@ -105,13 +105,13 @@ int main(void)
 	print_name("Bob Dylan", print_name_uppercase);
 	printf("\n");
 	*/
-	/*
+
 	int array[5] = {0, 98, 402, 1024, 4096};
 
 	array_iterator(array, 5, &print_elem);
 	array_iterator(array, 5, &print_elem_hex);
-	*/
 
+	/*
 	int array[20] = {0, -98, 98, 402, 1024, 4096, -1024, -98, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 98};
 	int index;
 
@@ -121,6 +121,6 @@ int main(void)
 	printf("%d\n", index);
 	index = int_index(array, 20, is_strictly_positive);
 	printf("%d\n", index);
-
+	*/
 	return (0);
 }
