@@ -8,9 +8,9 @@
 /**
  * struct print_case - a structure that holds id and function
  * @id: identifier character
- * @f: function which handles case
+ * @print_case: function which handles case
  *
- * typedef print_case_t : type for this struct
+ * typedef print_case_t : type for printcase structure
  */
 typedef struct print_case
 {
