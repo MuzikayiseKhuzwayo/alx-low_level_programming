@@ -3,44 +3,54 @@
 
 /**
  * print_cases - prints case by case for each output
- * @format: character delinieating format at that point
+ * @format: string of format specifiers
  * @args: array of arguments
- * @j: integer which returns 0 if a valid match is found
+ * @k: length of format string
  *
- * Return: j
+ * Return: Nothing
  */
-int print_cases(const format, va_list args, int j)
+void print_cases(const char *const format, va_list args, int k)
 {
+	int i, j;
 	char *temp;
-	switch (format)
+
+	i = 0, j = 0;
+
+	while (format[i] != '\0')
 	{
-	case 'c':
-		printf("%c", va_arg(args, int));
-		j = 1;
-		break;
-	case 'i':
-		printf("%d", va_arg(args, int));
-		j = 1;
-		break;
-	case 'f':
-		printf("%f", va_arg(args, double));
-		j = 1;
-		break;
-	case 's':
-		temp = va_arg(args, char *);
-		j = 1;
-		if (temp)
+		switch (format[i])
 		{
-			printf("%s", temp);
+		case 'c':
+			printf("%c", va_arg(args, int));
+			j = 1;
+			break;
+		case 'i':
+			printf("%d", va_arg(args, int));
+			j = 1;
+			break;
+		case 'f':
+			printf("%f", va_arg(args, double));
+			j = 1;
+			break;
+		case 's':
+			temp = va_arg(args, char *);
+			j = 1;
+			if (temp)
+			{
+				printf("%s", temp);
+				break;
+			}
+			printf("(nil)");
+			break;
+		default:
+			j = 0;
 			break;
 		}
-		printf("(nil)");
-		break;
-	default:
-		j = 0;
-		break;
+		if (format[i + 1] != '\0' && (j || k) && (format[i + 1] == 'c' || format[i + 1] == 'i' || format[i + 1] == 'f' || format[i + 1] == 's'))
+			printf(" ,");
+		j = 0, i++, k--;
 	}
-	return (j);
+	printf("\n");
 }
 
 /**
@@ -53,26 +63,18 @@ int print_cases(const format, va_list args, int j)
  */
 void print_all(const char *const format, ...)
 {
-	int i, j, k;
+	int i, len;
 	va_list args;
-	i = 0, j = 0, k = 0;
+
+	len = 0, i = 0;
 
 	if (format == NULL)
 		return;
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
-		k++, i++;
+		len++, i++;
 	}
-	i = 0;
-
-	while (format[i] != '\0')
-	{
-		j = print_cases(format[i], args, j);
-		if (format[i + 1] != '\0' && (j || k) && (format[i + 1] == 'c' || format[i + 1] == 'i' || format[i + 1] == 'f' || format[i + 1] == 's'))
-			printf(" ,");
-		j = 0, i++, k--;
-	}
-	printf("\n");
+	print_cases(format, args, len);
 	va_end(args);
 }
