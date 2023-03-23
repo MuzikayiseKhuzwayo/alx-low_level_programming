@@ -44,9 +44,9 @@ void print_cases(const char *const format, va_list args, int k)
 			break;
 		default:
 			j = 0;
-			break;
 		}
-		if (format[i + 1] != '\0' && (j || k) && (format[i + 1] == 'c' || format[i + 1] == 'i' || format[i + 1] == 'f' || format[i + 1] == 's'))
+		if (format[i + 1] != '\0' && (j || k) && (format[i + 1] == 'c' ||
+			format[i + 1] == 'i' || format[i + 1] == 'f' || format[i + 1] == 's'))
 			printf(" ,");
 		j = 0, i++, k--;
 	}
