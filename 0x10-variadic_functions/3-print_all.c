@@ -92,7 +92,6 @@ void print_all(const char *const format, ...)
 		{
 			printf("%s", separator);
 			cases[j].print_case(args);
-			va_arg(args, int);
 			separator = ", ";
 		}
 		j = 0, i++;
