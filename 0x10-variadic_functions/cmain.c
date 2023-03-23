@@ -23,7 +23,7 @@ int main(void)
 	print_strings(", ", 2, "Jay", "Django");
 	*/
 
-	print_all("ceisad", 'B', 3, "stSchool");
+	print_all("ceisad", 'B', 78, "stSchool");
 
 	return (0);
 }

@@ -2,55 +2,64 @@
 #include <stdio.h>
 
 /**
- * print_cases - prints case by case for each output
- * @format: string of format specifiers
- * @args: array of arguments
- * @k: length of format string
+ * print_case_char - prints case for format of c
+ * @arg: list of arguments
  *
  * Return: Nothing
  */
-void print_cases(const char *const format, va_list args, int k)
+void print_case_char(va_list arg)
 {
-	int i, j;
+	char c;
+
+	c = va_arg(arg, int);
+	printf("%c", c);
+}
+
+/**
+ * print_case_int - prints case for format of i
+ * @arg: list of arguments
+ *
+ * Return: Nothing
+ */
+void print_case_int(va_list arg)
+{
+	int num;
+
+	num = va_arg(arg, int);
+	printf("%i", num);
+}
+
+/**
+ * print_case_float - prints case for format of f
+ * @arg: list of arguments
+ *
+ * Return: Nothing
+ */
+void print_case_float(va_list arg)
+{
+	double fl;
+
+	fl = va_arg(arg, double);
+	printf("%f", fl);
+}
+
+/**
+ * print_case_str - prints case for format of s
+ * @arg: list of arguments
+ *
+ * Return: Nothing
+ */
+void print_case_str(va_list arg)
+{
 	char *temp;
 
-	i = 0, j = 0;
-
-	while (format[i] != '\0')
+	temp = va_arg(arg, char *);
+	if (temp == NULL)
 	{
-		switch (format[i])
-		{
-		case 'c':
-			printf("%c", va_arg(args, int));
-			j = 1;
-			break;
-		case 'i':
-			printf("%d", va_arg(args, int));
-			j = 1;
-			break;
-		case 'f':
-			printf("%f", va_arg(args, double));
-			j = 1;
-			break;
-		case 's':
-			temp = va_arg(args, char *);
-			j = 1;
-			if (temp)
-			{
-				printf("%s", temp);
-				break;
-			}
-			printf("(nil)");
-			break;
-		default:
-			j = 0;
-		}
-		if (format[i + 1] != '\0' && (j || k) && (format[i + 1] == 'c' ||
-			format[i + 1] == 'i' || format[i + 1] == 'f' || format[i + 1] == 's'))
-			printf(" ,");
-		j = 0, i++, k--;
+		printf("(nil)");
+		return;
 	}
-	printf("\n");
+	printf("%s", temp);
 }
 
 /**
@@ -63,18 +72,31 @@ void print_cases(const char *const format, va_list args, int k)
  */
 void print_all(const char *const format, ...)
 {
-	int i, len;
+	int i = 0, j = 0;
 	va_list args;
+	char *separator = "";
+	print_case_t cases[] = {
+		{'c', print_case_char},
+		{'i', print_case_int},
+		{'f', print_case_float},
+		{'s', print_case_str},
+		{0, NULL},
+	};
 
-	len = 0, i = 0;
-
-	if (format == NULL)
-		return;
 	va_start(args, format);
-	while (format[i] != '\0')
+	while (format[i] != '\0' && format != NULL)
 	{
-		len++, i++;
+		while (cases[j].id != format[i] && cases[j].id)
+			j++;
+		if (j < 4)
+		{
+			printf("%s", separator);
+			cases[j].print_case(args);
+			va_arg(args, int);
+			separator = ", ";
+		}
+		j = 0, i++;
 	}
-	print_cases(format, args, len);
+	printf("\n");
 	va_end(args);
 }
