@@ -15,7 +15,7 @@
 typedef struct print_case
 {
 	char id;
-	void (*print_case)(va_list arg);
+	void (*print_case)(va_list *arg);
 } print_case_t;
 
 int _putchar(char c);

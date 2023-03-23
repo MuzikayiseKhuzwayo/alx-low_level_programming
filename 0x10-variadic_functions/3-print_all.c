@@ -1,17 +1,23 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 
+void print_case_char(va_list *arg);
+void print_case_int(va_list *arg);
+void print_case_float(va_list *arg);
+void print_case_string(va_list *arg);
+void print_all(const char *const format, ...);
+
 /**
  * print_case_char - prints case for format of c
  * @arg: list of arguments
  *
  * Return: Nothing
  */
-void print_case_char(va_list arg)
+void print_case_char(va_list *arg)
 {
 	char c;
 
-	c = va_arg(arg, int);
+	c = va_arg(*arg, int);
 	printf("%c", c);
 }
 
@@ -21,11 +27,11 @@ void print_case_char(va_list arg)
  *
  * Return: Nothing
  */
-void print_case_int(va_list arg)
+void print_case_int(va_list *arg)
 {
 	int num;
 
-	num = va_arg(arg, int);
+	num = va_arg(*arg, int);
 	printf("%i", num);
 }
 
@@ -35,11 +41,11 @@ void print_case_int(va_list arg)
  *
  * Return: Nothing
  */
-void print_case_float(va_list arg)
+void print_case_float(va_list *arg)
 {
 	double fl;
 
-	fl = va_arg(arg, double);
+	fl = va_arg(*arg, double);
 	printf("%f", fl);
 }
 
@@ -49,11 +55,11 @@ void print_case_float(va_list arg)
  *
  * Return: Nothing
  */
-void print_case_str(va_list arg)
+void print_case_str(va_list *arg)
 {
 	char *temp;
 
-	temp = va_arg(arg, char *);
+	temp = va_arg(*arg, char *);
 	if (temp == NULL)
 	{
 		printf("(nil)");
@@ -91,7 +97,7 @@ void print_all(const char *const format, ...)
 		if (j < 4)
 		{
 			printf("%s", separator);
-			cases[j].print_case(args);
+			cases[j].print_case(&args);
 			separator = ", ";
 		}
 		j = 0, i++;
