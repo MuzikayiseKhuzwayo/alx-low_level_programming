@@ -14,6 +14,8 @@ void free_listint2(listint_t **head)
 {
 	listint_t *temp_element = *head, *temp_element_2;
 
+	if (head == NULL)
+		return;
 	while (temp_element)
 	{
 		temp_element_2 = temp_element;
