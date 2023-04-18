@@ -30,7 +30,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t len_read, len_write, close_err;
 	char *buffer;
 
-	if (filename == NULL)
+	if (filename == NULL || letters == 0)
 		return (0);
 
 	fd = open(filename, O_RDONLY);
@@ -46,13 +46,18 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (len_read == -1 || close_err == -1)
 	{
 		free(buffer);
+		close(fd);
 		return (0);
 	}
 
 	len_write = write(STDOUT_FILENO, buffer, len_read);
 	free(buffer);
 	if (len_read != len_write)
+	{
+		free(buffer);
+		close(fd);
 		return (0);
+	}
 
 	return (len_write);
 }

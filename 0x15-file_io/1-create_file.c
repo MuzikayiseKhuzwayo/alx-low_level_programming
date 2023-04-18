@@ -24,7 +24,7 @@ ssize_t _strlen(char *string)
  *
  * Description: use open, write and close to write some content to a file
  *
- * Process: 	-> declare file descriptor for file ops
+ * Process:		-> declare file descriptor for file ops
  *				-> declare write ssize_t variables for length checks
  *				-> check for filename NULL state
  *				-> open file with ordwr, and ocreat, and otrunc

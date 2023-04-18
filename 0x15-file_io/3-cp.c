@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
 {
 	int count, fd, read_value, new_value, write_value, close1, close2;
 	char *read_content;
+
 	count = count_chars(argc, argv[1]);
 
 	read_content = malloc(count);

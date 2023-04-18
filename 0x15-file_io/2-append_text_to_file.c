@@ -24,16 +24,16 @@ ssize_t _strlen(char *string)
  *
  * Description: use open, write and close to solve
  *
- * Process: 	-> declare a file descriptor variable for opening
- *				-> declare length holding variable for text writing
- *				-> check for filename NULL state
- *				-> open file with correct oflags and modes
- *				-> check for open fail
- *				-> find number of chars in @text_content
- *				-> write text_content to file in apend mode
- *				-> check fro write fail
- *				-> close file
- *				-> return success
+ * Process:	-> declare a file descriptor variable for opening
+ *			-> declare length holding variable for text writing
+ *			-> check for filename NULL state
+ *			-> open file with correct oflags and modes
+ *			-> check for open fail
+ *			-> find number of chars in @text_content
+ *			-> write text_content to file in apend mode
+ *			-> check fro write fail
+ *			-> close file
+ *			-> return success
  *
  * Return: 1 on success, -1 on failure
  *			-> fail: filename NULL, file not exist, no perm,
