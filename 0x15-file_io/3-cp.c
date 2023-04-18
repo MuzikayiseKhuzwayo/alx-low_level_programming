@@ -46,7 +46,6 @@ int main(int argc, char *argv[])
 	char *read_content;
 
 	count = count_chars(argc, argv[1]);
-
 	fd = open(argv[1], O_RDONLY);
 	read_content = malloc(sizeof(char) * count);
 	if (read_content == NULL)
@@ -70,18 +69,12 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 	free(read_content);
-
-	close2 = close(new_value);
-	close1 = close(fd);
+	close2 = close(new_value), close1 = close(fd);
 	if (close2 == -1)
-	{
 		dprintf(2, "Error: Can't close fd %d\n", new_value);
-		exit(100);
-	}
 	if (close1 == -1)
-	{
 		dprintf(2, "Error: Can't close fd %d\n", fd);
+	if (close1 == -1 || close2 == -1)
 		exit(100);
-	}
 	return (0);
 }
