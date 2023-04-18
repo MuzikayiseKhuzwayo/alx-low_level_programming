@@ -39,24 +39,25 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	buffer = malloc(sizeof(char) * letters);
 	if (buffer == NULL)
+	{
+		close(fd);
 		return (0);
-
+	}
 	len_read = read(fd, buffer, letters);
-	close_err = close(fd);
-	if (len_read == -1 || close_err == -1)
+	if (len_read == -1)
 	{
 		free(buffer);
+		close(fd);
 		return (0);
 	}
-
 	len_write = write(STDOUT_FILENO, buffer, len_read);
-	free(buffer);
-	if (len_read != len_write)
+	if (len_read != len_write || len_write == -1)
 	{
 		free(buffer);
+		close(fd);
 		return (0);
 	}
-
 	free(buffer);
+	close(fd);
 	return (len_write);
 }

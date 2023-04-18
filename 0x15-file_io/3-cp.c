@@ -47,10 +47,15 @@ int main(int argc, char *argv[])
 
 	count = count_chars(argc, argv[1]);
 
-	read_content = malloc(count);
 	fd = open(argv[1], O_RDONLY);
+	read_content = malloc(sizeof(char) * count);
+	if (read_content == NULL)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
 	read_value = read(fd, read_content, count);
-	if ((fd == -1) || (read_value == -1))
+	if ((fd == -1) || (read_value == -1 || read_content == NULL))
 	{
 		free(read_content);
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
@@ -64,17 +69,17 @@ int main(int argc, char *argv[])
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
+	free(read_content);
+
 	close2 = close(new_value);
 	close1 = close(fd);
 	if (close2 == -1)
 	{
-		free(read_content);
 		dprintf(2, "Error: Can't close fd %d\n", new_value);
 		exit(100);
 	}
 	if (close1 == -1)
 	{
-		free(read_content);
 		dprintf(2, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
