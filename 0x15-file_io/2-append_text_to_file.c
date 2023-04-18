@@ -61,7 +61,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (len_write == -1 || len_content != len_write)
 		return (-1);
 
-	close(fd);
+	close_err = close(fd);
 	if (close_err == -1)
 		return (-1);
 	return (1);
