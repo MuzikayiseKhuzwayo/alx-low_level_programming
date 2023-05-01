@@ -1,4 +1,0 @@
-#!/bin/bash
-gcc -g -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c $* -o out -lm; 
-echo -e "Testing file\n";
-./out
