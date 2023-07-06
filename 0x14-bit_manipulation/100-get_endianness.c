@@ -7,7 +7,7 @@
  *				set variable's pointer to the memory value
  *				return the int converted value of the first memory address
  *
- * Return integer: 0 if big endian. 1 if little endian
+ * Return: integer 0 if big endian. 1 if little endian
  */
 int get_endianness(void)
 {
